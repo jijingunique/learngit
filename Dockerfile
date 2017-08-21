@@ -1,5 +1,5 @@
 # Version: 1.0.1
-FROM ubuntu:lastest
+FROM ubuntu:latest
 MAINTAINER jing.ji "jing.ji@99bill.com"
 
 #设置root用户为后续命令的执行者
