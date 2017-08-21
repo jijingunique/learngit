@@ -31,7 +31,7 @@ ENV WEBAPP_PORT = 9090
 WORKDIR /opt/
 
 #设置启动命令
-ENTRYPOINT
+ENTRYPOINT ["ls"]
 
 #设置启动参数
 CMD["-a". "-l"]
