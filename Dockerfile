@@ -10,7 +10,7 @@ RUN apt-get update
 RUN apt-get install -y nginx
 
 #使用&&拼接命令
-RUN touch test.txt && echo "hello first docker file " >> abc.txt
+RUN touch test.txt && echo "hello first docker file " >> /opt/abc.txt
 
 #对外暴露端口
 EXPOSE 80 8080 1038 
