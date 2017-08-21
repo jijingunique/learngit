@@ -1,5 +1,5 @@
 # Version: 1.0.1
-FROM ubuntu:lastest
+FROM ubuntu:latest
 MAINTAINER jing.ji "jing.ji@99bill.com"
 
 #设置root用户为后续命令的执行者
@@ -10,13 +10,10 @@ RUN apt-get update
 RUN apt-get install -y nginx
 
 #使用&&拼接命令
-RUN touch test.txt && echo "hello first docker file " >> abc.txt
+RUN touch test.txt && echo "hello first docker file " >> /opt/abc.txt
 
 #对外暴露端口
 EXPOSE 80 8080 1038 
-
-#添加文件
-ADD abc.txt /opt/
 
 #添加文件夹
 ADD /webapp /opt/webapp
@@ -31,13 +28,13 @@ ENV WEBAPP_PORT = 9090
 WORKDIR /opt/
 
 #设置启动命令
-ENTRYPOINT
+ENTRYPOINT ["ls"]
 
 #设置启动参数
-CMD["-a". "-l"]
+CMD ["-a". "-l"]
 
 #设置卷
-VOLUME["/data", "/var/www"]
+VOLUME ["/data", "/var/www"]
 
 #设置子镜像的触发操作
 ONBUILD ADD . /app/src
