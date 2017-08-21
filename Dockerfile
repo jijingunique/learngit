@@ -15,9 +15,6 @@ RUN touch test.txt && echo "hello first docker file " >> /opt/abc.txt
 #对外暴露端口
 EXPOSE 80 8080 1038 
 
-#添加文件
-ADD abc.txt /opt/
-
 #添加文件夹
 ADD /webapp /opt/webapp
 
