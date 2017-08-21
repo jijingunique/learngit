@@ -34,10 +34,10 @@ WORKDIR /opt/
 ENTRYPOINT ["ls"]
 
 #设置启动参数
-CMD["-a". "-l"]
+CMD ["-a". "-l"]
 
 #设置卷
-VOLUME["/data", "/var/www"]
+VOLUME ["/data", "/var/www"]
 
 #设置子镜像的触发操作
 ONBUILD ADD . /app/src
